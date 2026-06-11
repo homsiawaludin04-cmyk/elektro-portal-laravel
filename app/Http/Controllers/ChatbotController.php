@@ -18,7 +18,7 @@ class ChatbotController extends Controller
 
         try {
             // Jembatan: Menembak API Flask lokal port 5000 yang sudah kita perbaiki tadi
-            $response = Http::timeout(15)->post('https://alamat-flask-kamu-di-cloud.onrender.com/api/chatbot', [
+            $response = Http::timeout(30)->post('https://homsi24-elektro-chatbot-flask-ai.hf.space/api/chatbot', [
                 'message' => $userMessage
             ]);
 
