@@ -1,0 +1,243 @@
+/* =========================================================================
+   CHATBOT AKADEMIK TEKNIK ELEKTRO UNTIRTA - FULL PAGE & RESPONSIVE
+   ========================================================================= */
+
+html,
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+/* Wrapper Utama setinggi layar monitor/HP */
+.fullscreen-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Card Chatbot dibuat melar mengisi wrapper */
+.card-chatbot {
+    border: none;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Match dengan Website Resmi */
+.header-untirta {
+    background-color: #0056b3; /* Biru solid khas elektro */
+    color: #ffffff;
+    border-bottom: 4px solid #ffcc00; /* Aksen kuning bawah */
+    padding: 8px 16px !important; /* Diperkecil agar header tidak terlalu lebar */
+    flex-shrink: 0;
+}
+
+/* Chat Window Area (Otomatis mengisi sisa space layar dan bisa scroll) */
+.chat-box {
+    flex: 1;
+    overflow-y: auto;
+    border: none;
+    padding: 30px 40px;
+    background:
+        linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.94)),
+        url("/images/elektro.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Gambar diam saat chat di-scroll */
+}
+
+/* Message Wrapper */
+.msg-wrapper {
+    display: flex;
+    align-items: flex-end; /* Membuat avatar duduk manis di baris bawah balon */
+    margin-bottom: 20px;
+    width: 100%;
+}
+.msg-wrapper.user {
+    justify-content: flex-end;
+}
+.msg-wrapper.bot {
+    justify-content: flex-start;
+}
+
+.chat-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    /* Efek bayangan melingkar tipis agar foto terkesan masuk ke dalam bingkai pop-out */
+    box-shadow:
+        3px 3px 8px rgba(0, 0, 0, 0.12),
+        -3px -3px 8px rgba(255, 255, 255, 0.9);
+    border: 2px solid #ffffff;
+}
+.msg-wrapper.user .chat-avatar {
+    margin-left: 10px; /* Jarak antara balon user dan foto di kanan */
+}
+.msg-wrapper.bot .chat-avatar {
+    margin-right: 10px; /* Jarak antara foto di kiri dan balon bot */
+}
+/* Chat Bubbles Global */
+.chat-bubble-container {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+.chat-bubble {
+    padding: 14px 20px;
+    font-size: 14.5px;
+    line-height: 1.5;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* User Chat Bubble (Biru Elektro) */
+.user .chat-bubble {
+    background: #0066cc; /* Menggunakan biru elektro solid */
+    color: #ffffff;
+    border-radius: 20px 20px 4px 20px;
+    /* Bayangan ganda: kanan bawah bayangan gelap, kiri atas bayangan cahaya putih terang murni */
+    box-shadow:
+        6px 6px 14px rgba(163, 177, 198, 0.6),
+        -6px -6px 14px rgba(255, 255, 255, 0.8);
+}
+
+/* Bot Chat Bubble (Abu-abu Terang Website) */
+.bot .chat-bubble {
+    background: #fdfdfd; /* Putih bersih */
+    color: #212529;
+    border-radius: 20px 20px 20px 4px;
+    border: none; /* Hapus border garis kaku lama */
+    /* Bayangan ganda: kanan bawah bayangan gelap, kiri atas bayangan cahaya putih terang murni */
+    box-shadow:
+        6px 6px 14px rgba(163, 177, 198, 0.6),
+        -6px -6px 14px rgba(255, 255, 255, 0.8);
+}
+
+.chat-bubble p {
+    margin-bottom: 0;
+}
+.chat-bubble p + p {
+    margin-top: 8px;
+}
+.chat-bubble ul,
+.chat-bubble ol {
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+
+/* Input Footer Area nempel di bawah layar */
+.card-footer-custom {
+    background-color: #ffffff;
+    border-top: 1px solid #edf2f9;
+    padding: 15px 30px; /* Padding diperlebar agar seimbang dengan area chat atas */
+    flex-shrink: 0;
+    width: auto !important; /* Paksa footer mengambil 100% lebar layar */
+    box-sizing: border-box;
+}
+
+.card-footer-custom .input-group {
+    width: 100% !important;
+    display: flex;
+}
+
+.input-custom {
+    flex: 1 !important; /* Paksa input text menghabiskan sisa ruang kosong di baris */
+    border-radius: 8px 0 0 8px !important;
+    border: 1px solid #dcdcdc;
+    padding: 14px 20px; /* Dipertebal sedikit biar makin premium dan gampang diketik */
+    font-size: 14.5px;
+    background-color: #f8f9fa; /* Beri warna abu-abu tipis biar aesthetic */
+}
+.input-custom:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.15);
+    border-color: #0056b3;
+    background-color: #ffffff; /* Saat fokus, ubah jadi putih bersih */
+}
+
+.btn-custom {
+    border-radius: 0 8px 8px 0 !important;
+    background-color: #0056b3;
+    border: 1px solid #0056b3;
+    color: #ffffff;
+    padding: 0 35px; /* Diperlebar tombolnya biar pas */
+    font-weight: 600;
+    font-size: 14.5px;
+    transition: all 0.2s ease;
+}
+.btn-custom:hover {
+    background-color: #004085;
+    border-color: #004085;
+}
+
+/* Custom Scrollbar */
+.chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-box::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+.chat-box::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+/* Animasi 3 Titik Mengetik */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 0;
+}
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: #a1a1a1;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+.typing-indicator span:nth-child(1) {
+    animation-delay: -0.32s;
+}
+.typing-indicator span:nth-child(2) {
+    animation-delay: -0.16s;
+}
+@keyframes bounce {
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* =========================================================================
+   MEDIA QUERIES (OPTIMASI KHUSUS LAYAR HP SAKU)
+   ========================================================================= */
+@media (max-width: 576px) {
+    .chat-box {
+        padding: 15px; /* Perkecil padding di HP agar ruang chat lebih luas */
+    }
+    .chat-bubble {
+        max-width: 88%; /* Balon chat boleh melebar sampai 88% di layar HP */
+        font-size: 13.5px; /* Sedikit perkecil font di HP biar proporsional */
+    }
+    .card-footer-custom {
+        padding: 10px 15px; /* Perkecil area input bawah di HP */
+    }
+}
