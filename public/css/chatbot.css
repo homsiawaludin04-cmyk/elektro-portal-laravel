@@ -1,7 +1,3 @@
-/* =========================================================================
-   CHATBOT AKADEMIK TEKNIK ELEKTRO UNTIRTA - FULL PAGE & RESPONSIVE
-   ========================================================================= */
-
 html,
 body {
     height: 100vh;
@@ -12,7 +8,6 @@ body {
     overflow: hidden;
 }
 
-/* Wrapper Utama setinggi layar monitor/HP */
 .fullscreen-wrapper {
     display: flex;
     flex-direction: column;
@@ -23,7 +18,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Card Chatbot dibuat melar mengisi wrapper */
 .card-chatbot {
     border: none;
     border-radius: 0;
@@ -35,16 +29,14 @@ body {
     padding: 0;
 }
 
-/* Header Match dengan Website Resmi */
 .header-untirta {
-    background-color: #0056b3; /* Biru solid khas elektro */
+    background-color: #0056b3;
     color: #ffffff;
-    border-bottom: 4px solid #ffcc00; /* Aksen kuning bawah */
-    padding: 8px 16px !important; /* Diperkecil agar header tidak terlalu lebar */
+    border-bottom: 4px solid #ffcc00;
+    padding: 8px 16px !important;
     flex-shrink: 0;
 }
 
-/* Chat Window Area (Otomatis mengisi sisa space layar dan bisa scroll) */
 .chat-box {
     flex: 1;
     overflow-y: auto;
@@ -54,13 +46,12 @@ body {
         linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.94)),
         url("/images/elektro.jpg") no-repeat center center;
     background-size: cover;
-    background-attachment: fixed; /* Gambar diam saat chat di-scroll */
+    background-attachment: fixed;
 }
 
-/* Message Wrapper */
 .msg-wrapper {
     display: flex;
-    align-items: flex-end; /* Membuat avatar duduk manis di baris bawah balon */
+    align-items: flex-end;
     margin-bottom: 20px;
     width: 100%;
 }
@@ -77,19 +68,18 @@ body {
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
-    /* Efek bayangan melingkar tipis agar foto terkesan masuk ke dalam bingkai pop-out */
     box-shadow:
         3px 3px 8px rgba(0, 0, 0, 0.12),
         -3px -3px 8px rgba(255, 255, 255, 0.9);
     border: 2px solid #ffffff;
 }
 .msg-wrapper.user .chat-avatar {
-    margin-left: 10px; /* Jarak antara balon user dan foto di kanan */
+    margin-left: 10px;
 }
 .msg-wrapper.bot .chat-avatar {
-    margin-right: 10px; /* Jarak antara foto di kiri dan balon bot */
+    margin-right: 10px;
 }
-/* Chat Bubbles Global */
+
 .chat-bubble-container {
     max-width: 70%;
     display: flex;
@@ -103,24 +93,20 @@ body {
     transition: all 0.3s ease;
 }
 
-/* User Chat Bubble (Biru Elektro) */
 .user .chat-bubble {
-    background: #0066cc; /* Menggunakan biru elektro solid */
+    background: #0066cc;
     color: #ffffff;
     border-radius: 20px 20px 4px 20px;
-    /* Bayangan ganda: kanan bawah bayangan gelap, kiri atas bayangan cahaya putih terang murni */
     box-shadow:
         6px 6px 14px rgba(163, 177, 198, 0.6),
         -6px -6px 14px rgba(255, 255, 255, 0.8);
 }
 
-/* Bot Chat Bubble (Abu-abu Terang Website) */
 .bot .chat-bubble {
-    background: #fdfdfd; /* Putih bersih */
+    background: #fdfdfd;
     color: #212529;
     border-radius: 20px 20px 20px 4px;
-    border: none; /* Hapus border garis kaku lama */
-    /* Bayangan ganda: kanan bawah bayangan gelap, kiri atas bayangan cahaya putih terang murni */
+    border: none;
     box-shadow:
         6px 6px 14px rgba(163, 177, 198, 0.6),
         -6px -6px 14px rgba(255, 255, 255, 0.8);
@@ -139,13 +125,12 @@ body {
     padding-left: 20px;
 }
 
-/* Input Footer Area nempel di bawah layar */
 .card-footer-custom {
     background-color: #ffffff;
     border-top: 1px solid #edf2f9;
-    padding: 15px 30px; /* Padding diperlebar agar seimbang dengan area chat atas */
+    padding: 15px 30px;
     flex-shrink: 0;
-    width: auto !important; /* Paksa footer mengambil 100% lebar layar */
+    width: auto !important;
     box-sizing: border-box;
 }
 
@@ -155,17 +140,17 @@ body {
 }
 
 .input-custom {
-    flex: 1 !important; /* Paksa input text menghabiskan sisa ruang kosong di baris */
+    flex: 1 !important;
     border-radius: 8px 0 0 8px !important;
     border: 1px solid #dcdcdc;
-    padding: 14px 20px; /* Dipertebal sedikit biar makin premium dan gampang diketik */
+    padding: 14px 20px;
     font-size: 14.5px;
-    background-color: #f8f9fa; /* Beri warna abu-abu tipis biar aesthetic */
+    background-color: #f8f9fa;
 }
 .input-custom:focus {
     box-shadow: 0 0 0 0.2rem rgba(0, 86, 179, 0.15);
     border-color: #0056b3;
-    background-color: #ffffff; /* Saat fokus, ubah jadi putih bersih */
+    background-color: #ffffff;
 }
 
 .btn-custom {
@@ -173,7 +158,7 @@ body {
     background-color: #0056b3;
     border: 1px solid #0056b3;
     color: #ffffff;
-    padding: 0 35px; /* Diperlebar tombolnya biar pas */
+    padding: 0 35px;
     font-weight: 600;
     font-size: 14.5px;
     transition: all 0.2s ease;
@@ -195,7 +180,6 @@ body {
     border-radius: 10px;
 }
 
-/* Animasi 3 Titik Mengetik */
 .typing-indicator {
     display: flex;
     align-items: center;
@@ -230,14 +214,58 @@ body {
    MEDIA QUERIES (OPTIMASI KHUSUS LAYAR HP SAKU)
    ========================================================================= */
 @media (max-width: 576px) {
+    html,
+    body,
+    .fullscreen-wrapper,
+    .card-chatbot {
+        height: 100vh;
+        height: 100dvh !important;
+        overflow: hidden;
+    }
+
+    .header-untirta {
+        padding: 6px 12px !important;
+    }
+    .header-untirta h1,
+    .header-untirta .h1 {
+        font-size: 13px !important;
+    }
+    .header-untirta h2,
+    .header-untirta .h2 {
+        font-size: 10.5px !important;
+    }
+
     .chat-box {
-        padding: 15px; /* Perkecil padding di HP agar ruang chat lebih luas */
+        padding: 15px 12px;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .chat-bubble-container {
+        max-width: 85% !important;
     }
     .chat-bubble {
-        max-width: 88%; /* Balon chat boleh melebar sampai 88% di layar HP */
-        font-size: 13.5px; /* Sedikit perkecil font di HP biar proporsional */
+        font-size: 13.5px;
+        padding: 10px 15px;
     }
+
     .card-footer-custom {
-        padding: 10px 15px; /* Perkecil area input bawah di HP */
+        padding: 8px 12px;
+        background-color: #ffffff;
+        z-index: 10;
+    }
+
+    .input-custom {
+        padding: 10px 14px;
+        font-size: 13.5px;
+    }
+    .btn-custom {
+        padding: 0 20px;
+        font-size: 13.5px;
+    }
+
+    .chat-avatar {
+        width: 35px;
+        height: 35px;
     }
 }
